@@ -25,7 +25,9 @@ namespace ProiectRetele.Pages.Facturi
         {
             if (_context.Factura != null)
             {
-                Factura = await _context.Factura.ToListAsync();
+                Factura = await _context.Factura
+                    .Include(f => f.Programare)
+                    .ToListAsync();
             }
         }
     }

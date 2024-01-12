@@ -36,6 +36,7 @@ namespace ProiectRetele.Pages.Facturi
                 return NotFound();
             }
             Factura = factura;
+            ViewData["ID_Programare"] = new SelectList(_context.Set<Programare>(), "ID", "Data");
             return Page();
         }
 

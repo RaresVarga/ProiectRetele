@@ -6,5 +6,6 @@
         public DateTime Data { get; set; }
         public int ID_Masina { get; set; }
         public int ID_Mecanic { get; set; }
+        public ICollection<Factura>? Facturi { get; set; }
     }
 }

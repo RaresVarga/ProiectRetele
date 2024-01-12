@@ -29,7 +29,9 @@ namespace ProiectRetele.Pages.Facturi
                 return NotFound();
             }
 
-            var factura = await _context.Factura.FirstOrDefaultAsync(m => m.ID == id);
+            var factura = await _context.Factura
+                .Include(f => f.Programare)
+                .FirstOrDefaultAsync(m => m.ID == id);
 
             if (factura == null)
             {
