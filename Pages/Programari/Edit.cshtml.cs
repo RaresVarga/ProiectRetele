@@ -36,6 +36,8 @@ namespace ProiectRetele.Pages.Programari
                 return NotFound();
             }
             Programare = programare;
+            ViewData["ID_Mecanic"] = new SelectList(_context.Set<Mecanic>(), "ID", "Nume");
+            ViewData["ID_Masina"] = new SelectList(_context.Set<Masina>(), "ID", "NumarInmatriculare");
             return Page();
         }
 

@@ -25,8 +25,12 @@ namespace ProiectRetele.Pages.Programari
         {
             if (_context.Programare != null)
             {
-                Programare = await _context.Programare.ToListAsync();
+                Programare = await _context.Programare
+                    .Include(b => b.Masina)
+                    .Include(f => f.Mecanic)
+                    .ToListAsync();
             }
+
         }
     }
 }

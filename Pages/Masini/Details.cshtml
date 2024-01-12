@@ -5,7 +5,7 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<h1>Detalii</h1>
 
 <div>
     <h4>Masina</h4>
@@ -36,10 +36,10 @@
             @Html.DisplayFor(model => model.Masina.AnFabricatie)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Masina.ID_Client)
+            Numele proprietarului
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Masina.ID_Client)
+            @Html.DisplayFor(model => model.Masina.Client.Nume)
         </dd>
     </dl>
 </div>
