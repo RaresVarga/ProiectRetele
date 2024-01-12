@@ -17,10 +17,10 @@
                 @Html.DisplayNameFor(model => model.Programare[0].Data)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Programare[0].ID_Masina)
+                @Html.DisplayNameFor(model => model.Programare[0].Masina.NumarInmatriculare)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Programare[0].ID_Mecanic)
+                Mecanic responsabil
             </th>
             <th></th>
         </tr>
@@ -32,11 +32,25 @@
                 @Html.DisplayFor(modelItem => item.Data)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ID_Masina)
+                @if (item.Masina != null)
+                {
+                    @Html.DisplayFor(modelItem => item.Masina.NumarInmatriculare)
+                }
+                else
+                {
+                    <span>Nu functioneaza</span>
+                }
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ID_Mecanic)
-            </td>
+                <td>
+                    @if (item.Mecanic != null)
+                    {
+                        @Html.DisplayFor(modelItem => item.Mecanic.Nume)
+                    }
+                    else
+                    {
+                        <span>Nu functioneaza mecanic</span>
+                    }
+                </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
                 <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |

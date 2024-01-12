@@ -35,8 +35,8 @@
                 <span asp-validation-for="Masina.AnFabricatie" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Masina.ID_Client" class="control-label"></label>
-                <input asp-for="Masina.ID_Client" class="form-control" />
+                <label asp-for="Masina.ID_Client" class="control-label">Numele proprietarului</label>
+                <select asp-for="Masina.ID_Client" class="form-control" asp-items="ViewBag.ID_Client"></select>
                 <span asp-validation-for="Masina.ID_Client" class="text-danger"></span>
             </div>
             <div class="form-group">
