@@ -26,7 +26,7 @@
                 @Html.DisplayNameFor(model => model.Masina[0].AnFabricatie)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Masina[0].ID_Client)
+                Numele proprietarului
             </th>
             <th></th>
         </tr>
@@ -46,9 +46,17 @@
             <td>
                 @Html.DisplayFor(modelItem => item.AnFabricatie)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ID_Client)
-            </td>
+                <td>
+                    @if (item.Client != null)
+                    {
+                        @Html.DisplayFor(modelItem => item.Client.Nume)
+                    }
+                    else
+                    {
+                        <span>Clientul nu are nume</span>
+                    }
+                </td>
+                
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
                 <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |

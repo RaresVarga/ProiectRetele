@@ -28,7 +28,9 @@ namespace ProiectRetele.Pages.Masini
                 return NotFound();
             }
 
-            var masina = await _context.Masina.FirstOrDefaultAsync(m => m.ID == id);
+            var masina = await _context.Masina
+                .Include(f => f.Client)
+                .FirstOrDefaultAsync(m => m.ID == id);
             if (masina == null)
             {
                 return NotFound();
