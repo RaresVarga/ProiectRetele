@@ -1,4 +1,6 @@
-﻿namespace ProiectRetele.Models
+﻿using System.Security.Policy;
+
+namespace ProiectRetele.Models
 {
     public class Masina
     {
@@ -8,5 +10,6 @@
         public string Model { get; set; }
         public int AnFabricatie { get; set; }
         public int ID_Client { get; set; }
+        public Client? Client { get; set; }
     }
 }

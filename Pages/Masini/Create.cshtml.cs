@@ -21,6 +21,7 @@ namespace ProiectRetele.Pages.Masini
 
         public IActionResult OnGet()
         {
+            ViewData["ID_Client"] = new SelectList(_context.Set<Programare>(), "ID", "Nume");
             return Page();
         }
 
