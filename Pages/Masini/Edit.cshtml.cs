@@ -36,6 +36,7 @@ namespace ProiectRetele.Pages.Masini
                 return NotFound();
             }
             Masina = masina;
+            ViewData["ID_Client"] = new SelectList(_context.Set<Client>(), "ID", "Nume");
             return Page();
         }
 

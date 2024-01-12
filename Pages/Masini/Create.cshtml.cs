@@ -21,6 +21,7 @@ namespace ProiectRetele.Pages.Masini
 
         public IActionResult OnGet()
         {
+            ViewData["ID_Client"] = new SelectList(_context.Set<Client>(), "ID", "Nume");
             return Page();
         }
 
@@ -36,6 +37,7 @@ namespace ProiectRetele.Pages.Masini
                 return Page();
             }
 
+            Masina.Client = await _context.Client.FindAsync(Masina.ID_Client);
             _context.Masina.Add(Masina);
             await _context.SaveChangesAsync();
 

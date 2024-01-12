@@ -28,7 +28,11 @@ namespace ProiectRetele.Pages.Programari
                 return NotFound();
             }
 
-            var programare = await _context.Programare.FirstOrDefaultAsync(m => m.ID == id);
+            var programare = await _context.Programare
+                    .Include(p => p.Masina)
+                    .Include(p => p.Mecanic)
+                .FirstOrDefaultAsync(m => m.ID == id);
+
             if (programare == null)
             {
                 return NotFound();
