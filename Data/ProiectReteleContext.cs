@@ -15,5 +15,13 @@ namespace ProiectRetele.Data
         }
 
         public DbSet<ProiectRetele.Models.Mecanic> Mecanic { get; set; } = default!;
+
+        public DbSet<ProiectRetele.Models.Programare>? Programare { get; set; }
+
+        public DbSet<ProiectRetele.Models.Factura>? Factura { get; set; }
+
+        public DbSet<ProiectRetele.Models.Masina>? Masina { get; set; }
+
+        public DbSet<ProiectRetele.Models.Client>? Client { get; set; }
     }
 }
