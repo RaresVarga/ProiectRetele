@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProiectRetele.Data;
 
@@ -11,9 +12,10 @@ using ProiectRetele.Data;
 namespace ProiectRetele.Migrations
 {
     [DbContext(typeof(ProiectReteleContext))]
-    partial class ProiectReteleContextModelSnapshot : ModelSnapshot
+    [Migration("20240112232727_eroareMasini")]
+    partial class eroareMasini
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -153,17 +155,7 @@ namespace ProiectRetele.Migrations
                     b.Property<int>("ID_Mecanic")
                         .HasColumnType("int");
 
-                    b.Property<int?>("MasinaID")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("MecanicID")
-                        .HasColumnType("int");
-
                     b.HasKey("ID");
-
-                    b.HasIndex("MasinaID");
-
-                    b.HasIndex("MecanicID");
 
                     b.ToTable("Programare");
                 });
@@ -186,34 +178,9 @@ namespace ProiectRetele.Migrations
                     b.Navigation("Client");
                 });
 
-            modelBuilder.Entity("ProiectRetele.Models.Programare", b =>
-                {
-                    b.HasOne("ProiectRetele.Models.Masina", "Masina")
-                        .WithMany("Programari")
-                        .HasForeignKey("MasinaID");
-
-                    b.HasOne("ProiectRetele.Models.Mecanic", "Mecanic")
-                        .WithMany("Programari")
-                        .HasForeignKey("MecanicID");
-
-                    b.Navigation("Masina");
-
-                    b.Navigation("Mecanic");
-                });
-
             modelBuilder.Entity("ProiectRetele.Models.Client", b =>
                 {
                     b.Navigation("Masini");
-                });
-
-            modelBuilder.Entity("ProiectRetele.Models.Masina", b =>
-                {
-                    b.Navigation("Programari");
-                });
-
-            modelBuilder.Entity("ProiectRetele.Models.Mecanic", b =>
-                {
-                    b.Navigation("Programari");
                 });
 
             modelBuilder.Entity("ProiectRetele.Models.Programare", b =>

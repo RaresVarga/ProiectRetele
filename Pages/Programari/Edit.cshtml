@@ -20,13 +20,13 @@
                 <span asp-validation-for="Programare.Data" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Programare.ID_Masina" class="control-label"></label>
-                <input asp-for="Programare.ID_Masina" class="form-control" />
+                <label asp-for="Programare.ID_Masina" class="control-label">Numar de inmatriculare</label>
+                <select asp-for="Programare.ID_Masina" class="form-control" asp-items="ViewBag.ID_Masina"></select>
                 <span asp-validation-for="Programare.ID_Masina" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Programare.ID_Mecanic" class="control-label"></label>
-                <input asp-for="Programare.ID_Mecanic" class="form-control" />
+                <label asp-for="Programare.ID_Mecanic" class="control-label">Mecanic responsabil</label>
+                <select asp-for="Programare.ID_Mecanic" class="form-control" asp-items="ViewBag.ID_Mecanic"></select>
                 <span asp-validation-for="Programare.ID_Mecanic" class="text-danger"></span>
             </div>
             <div class="form-group">

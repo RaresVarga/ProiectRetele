@@ -25,7 +25,9 @@ namespace ProiectRetele.Pages.Masini
         {
             if (_context.Masina != null)
             {
-                Masina = await _context.Masina.ToListAsync();
+                Masina = await _context.Masina
+                    .Include(f => f.Client)
+                    .ToListAsync();
             }
         }
     }
